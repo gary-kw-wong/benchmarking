@@ -1,4 +1,4 @@
-package org.gary.benchmark;
+package org.gary.benchmark.bigdecimal_vs_numberformat;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
