@@ -1,11 +1,11 @@
-###### Background
+### Background
 In some situation, we have unavoidably needs to round up a double value as requested by client's interface system. In order to keep the precision during calculation in Java, the first thing comes to our mind for Java would be BigDecimal.
 
 However, BigDecimal would unavoidably introduce 2 object instance in the process. In addition, we are just doing rounding without further calculation, would NumberFormat helps with better performance? 
 
 Let's take a look of above benchmarking and below result.
 
-###### Result
+### Result
 After running the benchmark, the statistics are as below. 
 
 Benchmark                                                                           Mode  Cnt    Score    Error  Units
@@ -23,9 +23,9 @@ BenchmarkBigDecimalVsNumberFormat.benchNumberFormatTL_7_WHOLE_NUMBER            
 BenchmarkBigDecimalVsNumberFormat.benchNumberFormatTL_9_WHOLE_NUMBER                avgt    5  547.886 ± 24.457  ns/op
 BenchmarkBigDecimalVsNumberFormat.benchNumberFormatTL_1_WHOLE_NUMBER_19_FRACTIONAL  avgt    5  519.489 ± 28.684  ns/op
 
-###### Conclusion
+### Conclusion
 
-The result is shedding us some light significantly. 
+The result is shedding us some light significantly: NumberFormat is outperforming BigDecimal.
 
 While using BigDecimal, the duration is quite steady with input value of different length of fractional part, which is around 520 ns to 589 ns. 
 
